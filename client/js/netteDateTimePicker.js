@@ -1,76 +1,76 @@
-( function( $ )
+(function($) 
 {
-    $.timepicker.regional['cs'] = {
-        timeOnlyTitle: 'Vyberte èas',
-        timeText: 'Èas',
-        hourText: 'Hodiny',
-        minuteText: 'Minuty',
-        secondText: 'Vteøiny',
-        millisecText: 'Milisekundy',
-        timezoneText: 'Èasové pásmo',
-        currentText: 'Nyní',
-        closeText: 'Zavøít',
-        timeFormat: 'H:m',
-        amNames: ['dop.', 'AM', 'A'],
-        pmNames: ['odp.', 'PM', 'P'],
-        isRTL: false
-    };
-    $.timepicker.setDefaults( $.timepicker.regional['cs'] );
+	$.timepicker.regional['cs'] = {
+		timeOnlyTitle: 'Vyberte Äas',
+		timeText: 'ÄŒas',
+		hourText: 'Hodiny',
+		minuteText: 'Minuty',
+		secondText: 'VteÅ™iny',
+		millisecText: 'Milisekundy',
+		timezoneText: 'ÄŒasovÃ© pÃ¡smo',
+		currentText: 'NynÃ­',
+		closeText: 'ZavÅ™Ã­t',
+		timeFormat: 'H:m',
+		amNames: ['dop.', 'AM', 'A'],
+		pmNames: ['odp.', 'PM', 'P'],
+		isRTL: false
+	};
+	$.timepicker.setDefaults($.timepicker.regional['cs']);
+  
+  $.datepicker.regional['cs'] = {
+      closeText: 'ZavÅ™Ã­t',
+      prevText: '&#x3c;PÅ™edchozÃ­',
+      nextText: 'NÃ¡sledujÃ­cÃ­&#x3e;',
+      currentText: 'NynÃ­',
+      monthNames: ['leden', 'Ãºnor', 'bÅ™ezen', 'duben', 'kvÄ›ten', 'Äerven', 'Äervenec', 'srpen','zÃ¡Å™Ã­', 'Å™Ã­jen', 'listopad', 'prosinec'],
+      monthNamesShort: ['led', 'Ãºno', 'bÅ™e', 'dub', 'kvÄ›', 'Äer', 'Ävc', 'srp', 'zÃ¡Å™', 'Å™Ã­j', 'lis', 'pro'],
+      dayNames: ['nedÄ›le', 'pondÄ›lÃ­', 'ÃºterÃ½', 'stÅ™eda', 'Ätvrtek', 'pÃ¡tek', 'sobota'],
+      dayNamesShort: ['ne', 'po', 'Ãºt', 'st', 'Ät', 'pÃ¡', 'so'],
+      dayNamesMin: ['ne', 'po', 'Ãºt', 'st', 'Ät', 'pÃ¡', 'so'],
+      dateFormat: 'dd.mm.yy',
+      firstDay: 1,
+      isRTL: false,
+      showMonthAfterYear: false,
+      yearSuffix: ''
+  };
+  $.datepicker.setDefaults($.datepicker.regional['cs']);
+      
+})(jQuery);
 
-    $.datepicker.regional['cs'] = {
-        closeText: 'Zavøít',
-        prevText: '&#x3c;Pøedchozí',
-        nextText: 'Následující&#x3e;',
-        currentText: 'Nyní',
-        monthNames: ['leden', 'únor', 'bøezen', 'duben', 'kvìten', 'èerven', 'èervenec', 'srpen', 'záøí', 'øíjen', 'listopad', 'prosinec'],
-        monthNamesShort: ['led', 'úno', 'bøe', 'dub', 'kvì', 'èer', 'èvc', 'srp', 'záø', 'øíj', 'lis', 'pro'],
-        dayNames: ['nedìle', 'pondìlí', 'úterý', 'støeda', 'ètvrtek', 'pátek', 'sobota'],
-        dayNamesShort: ['ne', 'po', 'út', 'st', 'èt', 'pá', 'so'],
-        dayNamesMin: ['ne', 'po', 'út', 'st', 'èt', 'pá', 'so'],
-        dateFormat: 'dd.mm.yy',
-        firstDay: 1,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: ''
-    };
-    $.datepicker.setDefaults( $.datepicker.regional['cs'] );
-
-} )( jQuery );
-
-$( document ).ready( function()
+$(document).ready(function()
 {
     //projdi vsechny inputy
-    $( 'input' ).each( function( index )
+    $('input').each( function(index) 
     {
         //pokud ma input dateinput-type => jedna se o datum
-        if ( $( this ).data( 'dateinput-type' ) )
+        if( $(this).data('dateinput-type') )
         {
-            switch ($( this ).data( 'dateinput-type' ))
+            switch( $(this).data('dateinput-type') )
             {
-                case 'date':
-                    $( this ).datepicker();
-                    break;
-                case 'time':
-                    $( this ).timepicker( {
-                        //timeFormat: 'HH:mm',
-                        showSecond: true,
-                        timeFormat: 'HH:mm:ss'
-                    } );
+            case 'date':
+                $(this).datepicker();
+                break;
+            case 'time':
+                $(this).timepicker({
+                           //timeFormat: 'HH:mm',
+                           showSecond: true,
+	                         timeFormat: 'HH:mm:ss'
+                        });
 
-                    break;
-                case 'datetime':
-                    $( this ).datetimepicker( {
-                        showSecond: false,
-                        timeFormat: 'HH:mm'
-                    } );
-                    break;
-                case 'month':
-                    $( this ).datepicker( {
-                        dateFormat: 'MM yy'
-                    } );
-                    break;
+                break;
+            case 'datetime':
+                $(this).datetimepicker({
+                           showSecond: false,
+	                         timeFormat: 'HH:mm'
+                        });
+                break;
+            case 'month':
+                $(this).datepicker({
+	                         dateFormat: 'MM yy'
+                        });
+                break;                                
             }
-
+            
         }
-    } );
-} );
+    });         
+});
