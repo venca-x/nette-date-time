@@ -22,6 +22,9 @@ Installation
 Usage Sample
 -------------
 
+!!! jQuery UI is required !!!
+-------------
+
 bootstrap.php
 
 ```php
@@ -48,4 +51,15 @@ presenter:
 
         return $form;
     }
+```
+
+@layout.latte
+presenter:
+```php
+		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/blitzer/jquery-ui-1.10.4.custom.min.css">
+		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
+
+        <script type="text/javascript" src="{$basePath}/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="{$basePath}/js/jquery-ui-timepicker-addon.js"></script>
+        <script type="text/javascript" src="{$basePath}/js/netteDateTimePicker.js"></script> 
 ```
