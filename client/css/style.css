@@ -1,13 +1,10 @@
-input.nette-date-time 
-{
-  background: #FFFFFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAEVSURBVHjanJFBSsQwGIU/SwVDpcxse4EpeID2ChL0COm6gmAPIB5g9hWX7R1KT+AJRpguZ9WlMEWQruJCmmnHVus8+Bf5Xnh5Sc601nTK8zwFYuA5iqK7jmdZZrhSynAAC6BKwrRKQg3ESimAePsQ6G76vEpCXSVhOggAYv/xpR+Mf/9kZsC/98Xd2jbOboPX1uR5jtfWsKmM5bXuge+sQeAhwBIEy5aPzy2Xyws4d4014Jb4GVAvVpCtDdwzrj3Aa0m9WOH3A96vbgiuU5qm4S+5rstbWQ4bCCFwHAfHcZgjIQTHvzBQURRmuvWURgOklEgpZ7WxpxrMlT1lzG1gTRn9N/h3g+PTf2tjn3LvsYBbTtTXAM0BZJbSKV9aAAAAAElFTkSuQmCC) no-repeat right;
-	padding-right: 20px;
-	border: 1px solid #aaaaaa;
-	padding-right: 20px;
-	padding: 0.2em  
+input.nette-date-time {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAEVSURBVHjanJFBSsQwGIU/SwVDpcxse4EpeID2ChL0COm6gmAPIB5g9hWX7R1KT+AJRpguZ9WlMEWQruJCmmnHVus8+Bf5Xnh5Sc601nTK8zwFYuA5iqK7jmdZZrhSynAAC6BKwrRKQg3ESimAePsQ6G76vEpCXSVhOggAYv/xpR+Mf/9kZsC/98Xd2jbOboPX1uR5jtfWsKmM5bXuge+sQeAhwBIEy5aPzy2Xyws4d4014Jb4GVAvVpCtDdwzrj3Aa0m9WOH3A96vbgiuU5qm4S+5rstbWQ4bCCFwHAfHcZgjIQTHvzBQURRmuvWURgOklEgpZ7WxpxrMlT1lzG1gTRn9N/h3g+PTf2tjn3LvsYBbTtTXAM0BZJbSKV9aAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 20px;
 }
 
-.ui-datepicker
-{
-  font-size: 8pt;
+.ui-datepicker {
+    font-size: 8pt;
 }

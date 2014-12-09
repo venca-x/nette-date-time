@@ -46,8 +46,17 @@ presenter:
     {
         $form = new UI\Form;
 
-        $form->addDate('date', 'Date time:', "datetime" )
-            ->setValue( date( "d.m.Y H:i" ) ); 
+        $form->addDate('datetime', 'Date time:', "datetime" )
+            ->setValue( date( "d.m.Y H:i" ) );
+
+        $form->addDate('date', 'Date:', "date" )
+            ->setValue( date( "d.m.Y" ) );
+
+        $form->addDate('month', 'Month:', "month" )
+            ->setValue( date( "d.m.Y" ) );
+
+        $form->addDate('time', 'time:', "time" )
+            ->setValue( date( "H:i" ) );
 
         return $form;
     }
@@ -63,3 +72,40 @@ presenter:
         <script type="text/javascript" src="{$basePath}/js/jquery-ui-timepicker-addon.js"></script>
         <script type="text/javascript" src="{$basePath}/js/netteDateTimePicker.js"></script> 
 ```
+Bower
+-------------
+    "dependencies": {
+        "jquery": "~1.*.*",
+        "bootstrap": "~3.3.0",
+        "netteForms": "https://raw.githubusercontent.com/nette/sandbox/master/www/js/netteForms.js",
+        "jquery-ui": "~1.11.2"
+    }
+
+Grunt
+-------------
+        concat: {
+            js: {
+                src: ['bower_components/jquery/dist/jquery.min.js',
+                    'bower_components/netteForms/index.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                    'www/js/main.js',
+					'./bower_components/jquery-ui/jquery-ui.min.js',
+					'./vendor/venca-x/nette-date-time/client/js/jquery-ui-timepicker-addon.js',
+					'./vendor/venca-x/nette-date-time/client/js/netteDateTimePicker.js'],
+                dest: 'www/js/compiled.min.js'
+            }
+        },
+		less: {
+			production: {
+				options: {
+					compress: true,
+					yuicompress: true,
+					optimization: 2
+				},
+				files: {
+					"www/css/main.css": [ "www/less/main.less",
+                    "./bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css",
+					"./vendor/venca-x/nette-date-time/client/css/style.css" ]
+				}
+			}
+        }

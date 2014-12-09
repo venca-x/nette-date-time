@@ -6,12 +6,13 @@ use Nette\Forms\Controls;
 
 class NetteDateTime extends Controls\TextInput
 {
-
-    protected $value;
+    /** @var Type time to format */
+    protected $type;
+    protected $value = NULL;
     private $aFormats = array(
-        "datetime" => 'd.m.Y\TH:i',
+        "datetime" => 'd.m.Y H:i',
         "date" => 'd.m.Y',
-        "month" => 'm-Y',
+        "month" => 'm Y',
         "time" => 'H:i:s',
     );
 
@@ -33,6 +34,7 @@ class NetteDateTime extends Controls\TextInput
         }
 
         parent::__construct( $label );
+        $this->type = $type;
         $this->control->addClass( 'nette-date-time' );
         $this->control->data( 'dateinput-type', $type );
     }
@@ -40,16 +42,20 @@ class NetteDateTime extends Controls\TextInput
     public function getControl()
     {
         $control = parent::getControl();
-        if ( $this->value )
-        {
-            $control->value = $this->value;
-        }
+        $control->value = $this->value;
         return $control;
     }
 
     public function setValue( $value )
     {
-        $this->value = date( 'd.m.Y H:i', strtotime( $value ) );
+        if( $value != NULL )
+        {
+            $this->value = date( $this->aFormats[ $this->type ], strtotime($value));
+        }
+        else
+        {
+            $this->value = NULL;
+        }
         return $this;
     }
 
