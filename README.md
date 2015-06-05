@@ -1,22 +1,11 @@
 Installation
 ------------
 
- 1. Add the bundle to your dependencies:
+  Install with composer:
 
-        // composer.json
-
-        {
-           // ...
-           "require": {
-               // ...
-               "venca-x/nette-date-time": "@dev"
-           }
-        }
-
- 2. Use Composer to download and install the bundle:
-
-        composer update
-        
+ 
+		composer require venca-x/nette-date-time:dev-master
+      
 
 
 Usage Sample
@@ -74,6 +63,10 @@ presenter:
 ```
 Bower
 -------------
+
+	bower install jquery#1.*.* --save-dev							//install last version 1.x
+	bower install jquery-ui#1.*.* --save-dev						//install last version 1.x
+
     "dependencies": {
         "jquery": "~1.*.*",
         "bootstrap": "~3.3.0",
@@ -95,17 +88,10 @@ Grunt
                 dest: 'www/js/compiled.min.js'
             }
         },
-		less: {
-			production: {
-				options: {
-					compress: true,
-					yuicompress: true,
-					optimization: 2
-				},
-				files: {
-					"www/css/main.css": [ "www/less/main.less",
-                    "./bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css",
-					"./vendor/venca-x/nette-date-time/client/css/style.css" ]
-				}
-			}
+        cssmin: {
+            target: {
+                files: {
+                    'www/css/main.min.css': ['www/css/main.css', "bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css", "vendor/venca-x/nette-date-time/client/css/style.css" ]
+                }
+            }
         }
