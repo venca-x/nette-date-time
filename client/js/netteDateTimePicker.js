@@ -52,6 +52,14 @@ $(document).ready(function()
                 break;
             case 'time':
                 $(this).timepicker({
+                    //timeFormat: 'HH:mm',
+                    showSecond: false,
+                    timeFormat: 'HH:mm'
+                });
+
+                break;
+            case 'timesec':
+                $(this).timepicker({
                            //timeFormat: 'HH:mm',
                            showSecond: true,
 	                         timeFormat: 'HH:mm:ss'

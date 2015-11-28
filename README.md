@@ -4,7 +4,7 @@ Installation
   Install with composer:
 
  
-		composer require venca-x/nette-date-time:dev-master
+		composer require venca-x/nette-date-time:~0.1
       
 
 
@@ -35,17 +35,20 @@ presenter:
     {
         $form = new UI\Form;
 
-        $form->addDate('datetime', 'Date time:', "datetime" )
+        $form->addDate("datetime", "Date time:", "datetime" )
             ->setValue( date( "d.m.Y H:i" ) );
 
-        $form->addDate('date', 'Date:', "date" )
+        $form->addDate("date", "Date:", "date" )
             ->setValue( date( "d.m.Y" ) );
 
-        $form->addDate('month', 'Month:', "month" )
+        $form->addDate("month", "Month:", "month" )
             ->setValue( date( "d.m.Y" ) );
 
-        $form->addDate('time', 'time:', "time" )
+        $form->addDate("time", "time:", "time" )
             ->setValue( date( "H:i" ) );
+            
+        $form->addDate("timesec", "timesec:", "timesec" )
+            ->setValue( date( "H:i:s" ) );            
 
         return $form;
     }

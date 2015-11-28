@@ -13,7 +13,8 @@ class NetteDateTime extends Controls\TextInput
         "datetime" => 'd.m.Y H:i',
         "date" => 'd.m.Y',
         "month" => 'm Y',
-        "time" => 'H:i:s',
+        "time" => 'H:i',
+        "timesec" => 'H:i:s',
     );
 
     public static function register()
@@ -61,6 +62,7 @@ class NetteDateTime extends Controls\TextInput
 
     public function getValue()
     {
+        //@TODO return DateTime object ?
         return date( 'Y-m-d H:i:s', strtotime( $this->value ) );
     }
 
