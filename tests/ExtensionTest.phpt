@@ -3,7 +3,6 @@ namespace Test;
 
 use Nette;
 use Nette\Forms\Form;
-use Nette\Forms\Validator;
 use Tester;
 use Tester\Assert;
 
@@ -21,9 +20,6 @@ class ExtensionTest extends Tester\TestCase
         Nette\Forms\NetteDateTime::register();
 
         $form = new Form;
-        $input = $form->addText('text');
-        $input->setValue(123);
-        Assert::true(Validator::validateEqual($input, '123'));
 
         $dateTimeInput = $form->addDate("datetime", "Date time:", "datetime" );
         Assert::same('<input type="text" name="datetime" class="nette-date-time" data-dateinput-type="datetime" id="frm-datetime">', (string) $dateTimeInput->getControl());
