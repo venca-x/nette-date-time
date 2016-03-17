@@ -1,0 +1,1 @@
+<input type="text" name="date" class="nette-date-time" data-dateinput-type="datetime" id="frm-date">

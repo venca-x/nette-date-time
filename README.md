@@ -14,18 +14,23 @@ Usage Sample
 !!! jQuery UI is required !!!
 -------------
 
-bootstrap.php
+bootstrap.php add register line OR add line in config.neon
 
 ```php
-//$configurator->createRobotLoader()
-//	->addDirectory(__DIR__)
-//	->addDirectory(__DIR__ . '/../libs')
-//	->register();
+    //$configurator->createRobotLoader()
+        //	->addDirectory(__DIR__)
+        //	->addDirectory(__DIR__ . '/../libs')
+        //	->register();
 
-Nette\Forms\NetteDateTime::register();
+    Nette\Forms\NetteDateTime::register();
 
-// Create Dependency Injection container from config.neon file
+    // Create Dependency Injection container from config.neon file
 ```
+
+OR add line to config.neon:
+
+    extensions:
+        replicator: Nette\Forms\NetteDateTime
 
 Usage
 -------------
