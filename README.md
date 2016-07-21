@@ -1,36 +1,41 @@
+Nette-date-time
+===============
+[![Build Status](https://travis-ci.org/venca-x/nette-date-time.svg)](https://travis-ci.org/venca-x/nette-date-time) 
+[![Latest Stable Version](https://poser.pugx.org/venca-x/nette-date-time/v/stable.svg)](https://packagist.org/packages/venca-x/nette-date-time) 
+[![Total Downloads](https://poser.pugx.org/venca-x/nette-date-time/downloads.svg)](https://packagist.org/packages/venca-x/nette-date-time) 
+[![Latest Unstable Version](https://poser.pugx.org/venca-x/nette-date-time/v/unstable.svg)](https://packagist.org/packages/venca-x/nette-date-time) 
+[![License](https://poser.pugx.org/venca-x/nette-date-time/license.svg)](https://packagist.org/packages/venca-x/nette-date-time)
+
+
 Installation
 ------------
-
-  Install with composer:
-
- 
-		composer require venca-x/nette-date-time:~0.1
-      
-
+Install with composer:
+``` 
+	composer require venca-x/nette-date-time:~0.1
+```      
 
 Usage Sample
 -------------
-
-!!! jQuery UI is required !!!
--------------
+*!!! jQuery UI is required !!!*
 
 bootstrap.php add register line OR add line in config.neon
 
 ```php
-    //$configurator->createRobotLoader()
-        //	->addDirectory(__DIR__)
+	//$configurator->createRobotLoader()
+	//	->addDirectory(__DIR__)
         //	->addDirectory(__DIR__ . '/../libs')
         //	->register();
 
-    Nette\Forms\NetteDateTime::register();
+	Nette\Forms\NetteDateTime::register();
 
-    // Create Dependency Injection container from config.neon file
+	// Create Dependency Injection container from config.neon file
 ```
 
 OR add line to config.neon:
-
+```
     extensions:
-        replicator: Nette\Forms\NetteDateTime
+        netteDateTime: Nette\Forms\NetteDateTime
+```
 
 Usage
 -------------
@@ -62,8 +67,8 @@ presenter:
 @layout.latte
 presenter:
 ```php
-		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/blitzer/jquery-ui-1.10.4.custom.min.css">
-		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/blitzer/jquery-ui-1.10.4.custom.min.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
 
         <script type="text/javascript" src="{$basePath}/js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="{$basePath}/js/jquery-ui-timepicker-addon.js"></script>
@@ -71,7 +76,7 @@ presenter:
 ```
 Bower
 -------------
-
+```
 	bower install jquery#1.*.* --save-dev							//install last version 1.x
 	bower install jquery-ui#1.*.* --save-dev						//install last version 1.x
 
@@ -81,18 +86,19 @@ Bower
         "netteForms": "https://raw.githubusercontent.com/nette/sandbox/master/www/js/netteForms.js",
         "jquery-ui": "~1.11.2"
     }
-
+```
 Grunt
 -------------
+```js
         concat: {
             js: {
                 src: ['bower_components/jquery/dist/jquery.min.js',
-                    'bower_components/netteForms/index.js',
-                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                    'www/js/main.js',
-					'./bower_components/jquery-ui/jquery-ui.min.js',
-					'./vendor/venca-x/nette-date-time/client/js/jquery-ui-timepicker-addon.js',
-					'./vendor/venca-x/nette-date-time/client/js/netteDateTimePicker.js'],
+			'bower_components/netteForms/index.js',
+			'bower_components/bootstrap/dist/js/bootstrap.min.js',
+			'www/js/main.js',
+			'./bower_components/jquery-ui/jquery-ui.min.js',
+			'./vendor/venca-x/nette-date-time/client/js/jquery-ui-timepicker-addon.js',
+			'./vendor/venca-x/nette-date-time/client/js/netteDateTimePicker.js'],
                 dest: 'www/js/compiled.min.js'
             }
         },
@@ -103,3 +109,4 @@ Grunt
                 }
             }
         }
+```
