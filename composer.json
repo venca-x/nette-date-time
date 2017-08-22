@@ -1,6 +1,6 @@
 {
   "name": "venca-x/nette-date-time",
-  "description": "Nette addon. Extension form for addDate",
+  "description": "Nette addon. Extension form for date and time",
   "license": "MIT",
   "authors": [
     {
@@ -9,16 +9,20 @@
     }
   ],
   "require": {
-    "php": ">= 5.3.7",
-    "nette/bootstrap": "^2.3",
-    "nette/forms": "^2.3"
+    "php": ">=7.1",
+    "nette/forms": "^3.0"
   },
   "require-dev": {
-    "nette/tester": "~1.0"
+    "nette/tester": "^2.0",
+    "nette/bootstrap": "^3.0"
+  },
+  "conflict": {
+    "nette/forms": "<3.0"
   },
   "autoload": {
     "classmap": [
       "src/"
     ]
-  }
+  },
+  "minimum-stability": "dev"
 }
