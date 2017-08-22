@@ -13,10 +13,10 @@ module.exports = function (grunt) {
                 command: 'composer create-project nette/code-checker nette-code-checker'
             },
             netteCodeChecker: {
-                command: 'php nette-code-checker\\src\\code-checker.php --short-arrays --strict-types'
+                command: 'php nette-code-checker\\src\\code-checker.php -d src -d tests --short-arrays --strict-types'
             },
             netteCodeCheckerFIX: {
-                command: ' --fix'
+                command: 'php nette-code-checker\\src\\code-checker.php -d src -d tests --short-arrays --strict-types --fix'
             },
             netteCodingStandard: {
                 command: 'php nette-coding-standard\\ecs check src tests --config nette-coding-standard\\coding-standard-php71.neon'
