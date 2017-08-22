@@ -2,8 +2,9 @@
 
 namespace Test;
 
-use Nette;
+
 use Nette\Forms\Form;
+use VencaX;
 use Tester;
 use Tester\Assert;
 
@@ -19,7 +20,7 @@ class ExtensionTest extends Tester\TestCase
 
     function setUp()
     {
-        Nette\Forms\NetteDateTime::register();
+        VencaX\NetteDateTime\NetteDateTimePicker::register();
         $this->form = new Form;
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Nette\Forms;
+namespace VencaX\NetteDateTime;
 
 use Nette;
 use Nette\Forms\Controls;
 use Nette\Utils\DateTime;
 
-class NetteDateTime extends Controls\TextInput
+class NetteDateTimePicker extends Controls\TextInput
 {
     /** @var Type date and time formats */
     protected $type;
@@ -24,7 +24,7 @@ class NetteDateTime extends Controls\TextInput
     public static function register()
     {
         \Nette\Forms\Container::extensionMethod('addDate', function (\Nette\Forms\Container $form, $name, $label = null, $type = 'datetime') {
-            $component = new NetteDateTime($label, $type);
+            $component = new NetteDateTimePicker($label, $type);
             $form->addComponent($component, $name);
             return $component;
         });
