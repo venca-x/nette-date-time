@@ -1,9 +1,9 @@
 Nette-date-time
 ===============
-[![Build Status](https://travis-ci.org/venca-x/nette-date-time.svg)](https://travis-ci.org/venca-x/nette-date-time) 
-[![Latest Stable Version](https://poser.pugx.org/venca-x/nette-date-time/v/stable.svg)](https://packagist.org/packages/venca-x/nette-date-time) 
-[![Total Downloads](https://poser.pugx.org/venca-x/nette-date-time/downloads.svg)](https://packagist.org/packages/venca-x/nette-date-time) 
-[![Latest Unstable Version](https://poser.pugx.org/venca-x/nette-date-time/v/unstable.svg)](https://packagist.org/packages/venca-x/nette-date-time) 
+[![Build Status](https://travis-ci.org/venca-x/nette-date-time.svg)](https://travis-ci.org/venca-x/nette-date-time)
+[![Latest Stable Version](https://poser.pugx.org/venca-x/nette-date-time/v/stable.svg)](https://packagist.org/packages/venca-x/nette-date-time)
+[![Total Downloads](https://poser.pugx.org/venca-x/nette-date-time/downloads.svg)](https://packagist.org/packages/venca-x/nette-date-time)
+[![Latest Unstable Version](https://poser.pugx.org/venca-x/nette-date-time/v/unstable.svg)](https://packagist.org/packages/venca-x/nette-date-time)
 [![License](https://poser.pugx.org/venca-x/nette-date-time/license.svg)](https://packagist.org/packages/venca-x/nette-date-time)
 
 Nette addon form for select date or datetime in input.
@@ -13,9 +13,9 @@ Nette addon form for select date or datetime in input.
 Installation
 ------------
 Install with composer:
-``` 
+```
 composer require venca-x/nette-date-time:^1.1
-```      
+```
 
 Requirements
 -------------
@@ -37,9 +37,9 @@ to bootstrap.php add register line OR add line in config.neon
 //	->addDirectory(__DIR__)
     //	->addDirectory(__DIR__ . '/../libs')
     //	->register();
- 
+
 VencaX\NetteDateTime\NetteDateTimePicker::register();
- 
+
 // Create Dependency Injection container from config.neon file
 ```
 
@@ -48,25 +48,25 @@ Usage
 -------------
 presenter:
 ```php
-protected function concertForm() 
+protected function concertForm()
 {
     $form = new UI\Form;
- 
+
     $form->addDate("datetime", "Date time:", "datetime" )
         ->setValue( date( "d.m.Y H:i" ) );
- 
+
     $form->addDate("date", "Date:", "date" )
         ->setValue( date( "d.m.Y" ) );
- 
+
     $form->addDate("month", "Month:", "month" )
         ->setValue( date( "d.m.Y" ) );
- 
+
     $form->addDate("time", "time:", "time" )
         ->setValue( date( "H:i" ) );
- 
+
     $form->addDate("timesec", "timesec:", "timesec" )
-        ->setValue( date( "H:i:s" ) );            
- 
+        ->setValue( date( "H:i:s" ) );
+
     return $form;
 }
 ```
@@ -76,10 +76,10 @@ presenter:
 ```
 <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/blitzer/jquery-ui-1.10.4.custom.min.css">
 <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
- 
+
 <script type="text/javascript" src="{$basePath}/js/jquery-ui-1.10.4.custom.min.js"></script>
 <script type="text/javascript" src="{$basePath}/js/jquery-ui-timepicker-addon.js"></script>
-<script type="text/javascript" src="{$basePath}/js/netteDateTimePicker.js"></script> 
+<script type="text/javascript" src="{$basePath}/js/netteDateTimePicker.js"></script>
 ```
 Bower
 -------------
@@ -88,8 +88,8 @@ bower install jquery#1.*.* --save       //install last version 1.x
 bower install jquery-ui#1.*.* --save    //install last version 1.x
 
 ```
-Then in bower.json: 
-``` 
+Then in bower.json:
+```
 "dependencies": {
     "jquery": "~1.*.*",
     "jquery-ui": "~1.11.2"
