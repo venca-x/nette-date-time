@@ -8,19 +8,28 @@ module.exports = function (grunt) {
             test: {
                 command: 'vendor\\bin\\tester tests -s -p php -c tests\\php.ini'
             },
-            installNetteCodingStandard: {
-                command: 'composer create-project nette/coding-standard nette-coding-standard'
+            installCodeSoft: {
+                command: 'composer create-project nette/coding-standard nette-coding-standard',
+                command: 'composer create-project nette/code-checker nette-code-checker'
+            },
+            netteCodeChecker: {
+                command: 'php nette-code-checker\\src\\code-checker.php --short-arrays --strict-types'
+            },
+            netteCodeCheckerFIX: {
+                command: ' --fix'
             },
             netteCodingStandard: {
-                command: 'php nette-coding-standard\\\\ecs check src tests --config nette-coding-standard\\\\coding-standard-php71.neon'
+                command: 'php nette-coding-standard\\ecs check src tests --config nette-coding-standard\\coding-standard-php71.neon'
             },
             netteCodingStandardFIX: {
-                command: 'php nette-coding-standard\\\\ecs check src tests --config nette-coding-standard\\\\coding-standard-php71.neon --fix'
+                command: 'php nette-coding-standard\\ecs check src tests --config nette-coding-standard\\coding-standard-php71.neon --fix'
             }
         }
     });
 
     grunt.registerTask('test', ['shell:test']);
+    grunt.registerTask('netteCodeChecker', ['shell:netteCodeChecker']);
+    grunt.registerTask('netteCodeCheckerFIX', ['shell:netteCodeCheckerFIX']);
     grunt.registerTask('netteCodingStandard', ['shell:netteCodingStandard']);
     grunt.registerTask('netteCodingStandardFIX', ['shell:netteCodingStandardFIX']);
 

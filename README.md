@@ -14,7 +14,7 @@ Installation
 ------------
 Install with composer:
 ``` 
-	composer require venca-x/nette-date-time:^1.1
+composer require venca-x/nette-date-time:^1.1
 ```      
 
 Requirements
@@ -73,7 +73,7 @@ protected function concertForm()
 
 @layout.latte
 presenter:
-```php
+```
 <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/blitzer/jquery-ui-1.10.4.custom.min.css">
 <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
  
@@ -84,8 +84,8 @@ presenter:
 Bower
 -------------
 ```
-bower install jquery#1.*.* --save							//install last version 1.x
-bower install jquery-ui#1.*.* --save						//install last version 1.x
+bower install jquery#1.*.* --save       //install last version 1.x
+bower install jquery-ui#1.*.* --save    //install last version 1.x
 
 ```
 Then in bower.json: 
@@ -101,12 +101,12 @@ Grunt
 concat: {
     js: {
         src: ['bower_components/jquery/dist/jquery.min.js',
-    'bower_components/netteForms/index.js',
-    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'www/js/main.js',
-    './bower_components/jquery-ui/jquery-ui.min.js',
-    './vendor/venca-x/nette-date-time/client/js/jquery-ui-timepicker-addon.js',
-    './vendor/venca-x/nette-date-time/client/js/netteDateTimePicker.js'],
+                'bower_components/netteForms/index.js',
+                'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                'www/js/main.js',
+                './bower_components/jquery-ui/jquery-ui.min.js',
+                './vendor/venca-x/nette-date-time/client/js/jquery-ui-timepicker-addon.js',
+                './vendor/venca-x/nette-date-time/client/js/netteDateTimePicker.js'],
         dest: 'www/js/compiled.min.js'
     }
 },
@@ -121,4 +121,4 @@ cssmin: {
 
 Migrate from version 1.0.x to 1.1.x
 -------------
-**change namespace** from **Nette\Forms\NetteDateTime** to **VencaX\NetteDateTime\NetteDateTimePicker***
+**change namespace** from **Nette\Forms\NetteDateTime** to **VencaX\NetteDateTime\NetteDateTimePicker**
