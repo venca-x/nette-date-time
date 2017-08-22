@@ -1,14 +1,15 @@
 <?php
 
-namespace Test;
+declare(strict_types=1);
 
+namespace Test;
 
 use Nette\Forms\Form;
 use VencaX;
 use Tester;
 use Tester\Assert;
 
-$container = require __DIR__ . '/bootstrap.php';
+require __DIR__ . '/bootstrap.php';
 
 class ExtensionTest extends Tester\TestCase
 {
@@ -62,5 +63,5 @@ class ExtensionTest extends Tester\TestCase
 
 }
 
-$test = new ExtensionTest($container);
+$test = new ExtensionTest();
 $test->run();
