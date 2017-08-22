@@ -6,12 +6,13 @@ namespace Nette\Forms;
 
 use Nette;
 use Nette\Forms\Controls;
+use Nette\Utils\DateTime;
 
 class NetteDateTime extends Controls\TextInput
 {
     /** @var Type date and time formats */
     protected $type;
-    protected $value = NULL;
+    protected $value = null;
     private $supportFormatsArray = array(
         "datetime" => 'd.m.Y H:i',
         "date" => 'd.m.Y',
@@ -63,7 +64,7 @@ class NetteDateTime extends Controls\TextInput
      */
     public function getValue()
     {
-        return new DateTime();
+        return new DateTime($this->value);
     }
 
 }
