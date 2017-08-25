@@ -102,7 +102,7 @@ Submit form
 All data from this plugin are send as **Nette\Utils\DateTime**
 ```php
 $form->onSuccess[] = function ($form) {
-
+ 
     dump($form->getValues());
     $this->terminate();
     /*
@@ -130,6 +130,18 @@ $form->onSuccess[] = function ($form) {
     */
 };
 ```
+
+For showing the selected values use **->fomrat("xxx")** on Nette\Utils\DateTime
+```php
+    $a = $form->getValues(true);
+ 
+    $a['datetime']->format('d.m.Y H:i');
+    $a['date']->format('d.m.Y');
+    $a['month']->format('m Y');
+    $a['time']->format('H:i');
+    $a['timesec']->format('H:i:s');
+``` 
+
 
 @layout.latte
 presenter:
