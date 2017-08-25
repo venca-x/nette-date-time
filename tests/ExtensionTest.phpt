@@ -87,6 +87,14 @@ class ExtensionTest extends Tester\TestCase
 		$timesecInput = $this->form->addDate('timesec', 'Time sec:', 'timesec')->setValue($dateTime);
 		Assert::same('<input type="text" name="timesec" class="nette-date-time" data-dateinput-type="timesec" id="frm-timesec" value="' . $dateTime->format('H:i:s') . '">', (string) $timesecInput->getControl());
 	}
+
+	public function testBadValue()
+	{
+		Assert::exception(function() {
+			$this->form->addDate('datetime', 'Date time:', 'datetime')->setValue("xxx");
+		}, \Exception::class);
+
+	}
 }
 
 $test = new ExtensionTest();
