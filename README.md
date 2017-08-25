@@ -14,7 +14,7 @@ Installation
 ------------
 Install with composer:
 ```
-composer require venca-x/nette-date-time:^1.1
+composer require venca-x/nette-date-time:v1.1.x-dev
 ```
 
 Requirements
