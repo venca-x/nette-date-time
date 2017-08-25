@@ -46,34 +46,94 @@ VencaX\NetteDateTime\NetteDateTimePicker::register();
 
 Usage
 -------------
-presenter:
+presenter set value:
 ```php
 protected function concertForm()
 {
     $form = new UI\Form;
-
-    $form->addDate("datetime", "Date time:", "datetime" )
-        ->setValue( date( "d.m.Y H:i" ) );
-
-    $form->addDate("date", "Date:", "date" )
-        ->setValue( date( "d.m.Y" ) );
-
-    $form->addDate("month", "Month:", "month" )
-        ->setValue( date( "d.m.Y" ) );
-
-    $form->addDate("time", "time:", "time" )
-        ->setValue( date( "H:i" ) );
-
-    $form->addDate("timesec", "timesec:", "timesec" )
-        ->setValue( date( "H:i:s" ) );
-
-    return $form;
+    
+    $form->addDate("datetime", "Date time:", "datetime")
+        ->setValue(date("d.m.Y H:i"));
+    
+    $form->addDate("date", "Date:", "date")
+        ->setValue(date("d.m.Y"));
+    
+    $form->addDate("month", "Month:", "month")
+        ->setValue(date("d.m.Y"));
+        
+    $form->addDate("month2", "Month2:", "month")
+        ->setValue(date("m Y"));
+    
+    $form->addDate("time", "time:", "time")
+        ->setValue(date("H:i"));
+    
+    $form->addDate("timesec", "timesec:", "timesec")
+        ->setValue(date("H:i:s"));
+    
+    $form->addSubmit('send', 'Show');
 }
+```
+
+Or presenter set DatTime value:
+```php
+protected function concertForm()
+{
+    $form->addDate("datetime", "Date time:", "datetime")
+        ->setValue(new DateTime());
+    
+    $form->addDate("date", "Date:", "date")
+        ->setValue(new DateTime());
+    
+    $form->addDate("month", "Month:", "month")
+        ->setValue(new DateTime());
+    
+    $form->addDate("time", "time:", "time")
+        ->setValue(new DateTime());
+    
+    $form->addDate("timesec", "timesec:", "timesec")
+        ->setValue(new DateTime());
+        
+    $form->addSubmit('send', 'Show');
+}
+```
+
+Submit form
+-------------
+All data from this plugin are send as **Nette\Utils\DateTime**
+```php
+$form->onSuccess[] = function ($form) {
+
+    dump($form->getValues());
+    $this->terminate();
+    /*
+    Nette\Utils\ArrayHash #6daf
+        datetime => Nette\Utils\DateTime #8732
+            date => "2017-08-25 21:48:00.000000" (26)
+            timezone_type => 3
+            timezone => "Europe/Prague" (13)
+        date => Nette\Utils\DateTime #c228
+            date => "2017-08-25 21:53:19.000000" (26)
+            timezone_type => 3
+            timezone => "Europe/Prague" (13)
+        month => Nette\Utils\DateTime #cd2a
+            date => "2017-08-25 21:53:19.000000" (26)
+            timezone_type => 3
+            timezone => "Europe/Prague" (13)
+        time => Nette\Utils\DateTime #7e7b
+            date => "2017-08-25 21:48:00.000000" (26)
+            timezone_type => 3
+            timezone => "Europe/Prague" (13)
+        timesec => Nette\Utils\DateTime #d546
+            date => "2017-08-25 21:48:51.000000" (26)
+            timezone_type => 3
+            timezone => "Europe/Prague" (13)
+    */
+};
 ```
 
 @layout.latte
 presenter:
-```
+```html
 <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/blitzer/jquery-ui-1.10.4.custom.min.css">
 <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
 

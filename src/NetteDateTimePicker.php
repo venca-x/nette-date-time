@@ -12,7 +12,10 @@ class NetteDateTimePicker extends Controls\TextInput
 {
 	/** @var Type date and time formats */
 	protected $type;
-	protected $value;
+
+	/** @var DateTime */
+	protected $valueDateTime;
+
 	private $supportFormatsArray = [
 		'datetime' => 'd.m.Y H:i',
 		'date' => 'd.m.Y',
@@ -56,19 +59,35 @@ class NetteDateTimePicker extends Controls\TextInput
 	public function setValue($value)
 	{
 		if ($value != null) {
-			$this->value = date($this->supportFormatsArray[$this->type], strtotime($value));
+			if ($value instanceof DateTime) {
+				$this->valueDateTime = $value;
+			} else {
+				//parse
+				$this->valueDateTime = DateTime::createFromFormat($this->supportFormatsArray[$this->type], $value);
+
+				if ($this->valueDateTime == null) {
+					//default parser if is problem in first parser
+					$this->valueDateTime = new DateTime($value);
+				}
+			}
+
+			//value for input
+			$this->value = $this->valueDateTime->format($this->supportFormatsArray[$this->type]);
+
 		} else {
 			$this->value = null;
 		}
+
 		return $this;
 	}
 
 
 	/**
+	 * Value after submit form
 	 * @return DateTime
 	 */
 	public function getValue()
 	{
-		return new DateTime($this->value);
+		return $this->valueDateTime;
 	}
 }
