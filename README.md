@@ -1,6 +1,7 @@
 Nette-date-time
 ===============
 [![Build Status](https://travis-ci.org/venca-x/nette-date-time.svg)](https://travis-ci.org/venca-x/nette-date-time)
+[![Coverage Status](https://coveralls.io/repos/github/venca-x/nette-date-time/badge.svg?branch=master)](https://coveralls.io/github/venca-x/nette-date-time?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/venca-x/nette-date-time/v/stable.svg)](https://packagist.org/packages/venca-x/nette-date-time)
 [![Total Downloads](https://poser.pugx.org/venca-x/nette-date-time/downloads.svg)](https://packagist.org/packages/venca-x/nette-date-time)
 [![Latest Unstable Version](https://poser.pugx.org/venca-x/nette-date-time/v/unstable.svg)](https://packagist.org/packages/venca-x/nette-date-time)
