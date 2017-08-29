@@ -47,6 +47,18 @@ VencaX\NetteDateTime\NetteDateTimePicker::register();
 
 Usage
 -------------
+
+```php
+$form->addDate("name", "Label:", "type")
+```
+types:
+* **datetime** - set date and time
+* **date** - set date
+* **month** - sem month (with year)
+* **time** - set time (H:i)
+* **timesec** - set time with sec (H:i:s)
+
+
 presenter set value:
 ```php
 protected function concertForm()
