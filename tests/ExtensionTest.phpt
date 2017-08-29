@@ -88,6 +88,12 @@ class ExtensionTest extends Tester\TestCase
 		Assert::same('<input type="text" name="timesec" class="nette-date-time" data-dateinput-type="timesec" id="frm-timesec" value="' . $dateTime->format('H:i:s') . '">', (string) $timesecInput->getControl());
 	}
 
+	public function testBadType()
+	{
+		Assert::exception(function () {
+			$this->form->addDate('datetime', 'Date time:', 'xxx');
+		}, \Exception::class);
+	}
 
 	public function testBadValue()
 	{
