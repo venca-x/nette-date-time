@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         shell: {
             test: {
-                command: 'vendor\\bin\\tester tests -s -p php -c tests\\php.ini'
+                command: 'vendor\\bin\\tester tests -s -p php'
             },
             installCodeSoft: {
                 command: 'composer create-project nette/coding-standard nette-coding-standard',
