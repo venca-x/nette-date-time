@@ -27,7 +27,7 @@ class NetteDateTimePicker extends Controls\TextInput
 
 	public static function register()
 	{
-		\Nette\Forms\Container::extensionMethod('addDate', function (\Nette\Forms\Container $form, $name, $label = null, $type = 'datetime') {
+		Nette\Forms\Container::extensionMethod('addDate', function (Nette\Forms\Container $form, $name, $label = null, $type = 'datetime') {
 			$component = new NetteDateTimePicker($label, $type);
 			$form->addComponent($component, $name);
 			return $component;

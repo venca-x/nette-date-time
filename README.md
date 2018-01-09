@@ -1,6 +1,7 @@
 Nette-date-time
 ===============
 [![Build Status](https://travis-ci.org/venca-x/nette-date-time.svg?branch=v1.1)](https://travis-ci.org/venca-x/nette-date-time)
+[![Coverage Status](https://coveralls.io/repos/github/venca-x/nette-date-time/badge.svg?branch=v1.1)](https://coveralls.io/github/venca-x/nette-date-time?branch=v1.1)
 [![Latest Stable Version](https://poser.pugx.org/venca-x/nette-date-time/v/stable.svg)](https://packagist.org/packages/venca-x/nette-date-time)
 [![Total Downloads](https://poser.pugx.org/venca-x/nette-date-time/downloads.svg)](https://packagist.org/packages/venca-x/nette-date-time)
 [![Latest Unstable Version](https://poser.pugx.org/venca-x/nette-date-time/v/unstable.svg)](https://packagist.org/packages/venca-x/nette-date-time)
@@ -14,7 +15,7 @@ Installation
 ------------
 Install with composer:
 ```
-composer require venca-x/nette-date-time:v1.1.x-dev
+composer require venca-x/nette-date-time:v1.1
 ```
 
 Requirements
@@ -46,6 +47,18 @@ VencaX\NetteDateTime\NetteDateTimePicker::register();
 
 Usage
 -------------
+
+```php
+$form->addDate("name", "Label:", "type")
+```
+types:
+* **datetime** - set date and time
+* **date** - set date
+* **month** - sem month (with year)
+* **time** - set time (H:i)
+* **timesec** - set time with sec (H:i:s)
+
+
 presenter set value:
 ```php
 protected function concertForm()
