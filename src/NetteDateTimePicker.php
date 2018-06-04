@@ -35,7 +35,7 @@ class NetteDateTimePicker extends Controls\TextInput
 	}
 
 
-	public function __construct($label = null, string $type)
+	public function __construct($label, string $type)
 	{
 		if (!isset($this->supportFormatsArray[$type])) {
 			throw new \InvalidArgumentException("addDate: invalid date type '$type' given.");

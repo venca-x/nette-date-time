@@ -19,10 +19,10 @@ module.exports = function (grunt) {
                 command: 'php ..\\..\\nette-code-checker\\src\\code-checker.php -d src --short-arrays --strict-types --fix',
             },
             netteCodingStandard: {
-                command: 'php ..\\..\\nette-coding-standard\\bin\\easy-coding-standard check src tests --level clean-code'
+                command: 'php ..\\..\\nette-coding-standard\\ecs check src tests --config ..\\..\\nette-coding-standard\\coding-standard-php71.neon'
             },
             netteCodingStandardFIX: {
-                command: 'php ..\\..\\nette-coding-standard\\bin\\easy-coding-standard check src tests --level clean-code --fix'
+                command: 'php ..\\..\\nette-coding-standard\\ecs check src tests --config ..\\..\\nette-coding-standard\\coding-standard-php71.neon --fix'
             }
         }
     });

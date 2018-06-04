@@ -14,7 +14,6 @@ require __DIR__ . '/bootstrap.php';
 
 class ExtensionTest extends Tester\TestCase
 {
-
 	/**
 	 * Nette\Forms\Form
 	 */
