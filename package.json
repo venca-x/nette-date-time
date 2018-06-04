@@ -1,6 +1,5 @@
 {
   "name": "nette-date-time",
-  "version": "1.0.0",
   "description": "Nette-date-time\r ===============\r [![Build Status](https://travis-ci.org/venca-x/nette-date-time.svg)](https://travis-ci.org/venca-x/nette-date-time) \r [![Latest Stable Version](https://poser.pugx.org/venca-x/nette-date-time/v/stable.svg)](https://packagist.org/packages/venca-x/nette-date-time) \r [![Total Downloads](https://poser.pugx.org/venca-x/nette-date-time/downloads.svg)](https://packagist.org/packages/venca-x/nette-date-time) \r [![Latest Unstable Version](https://poser.pugx.org/venca-x/nette-date-time/v/unstable.svg)](https://packagist.org/packages/venca-x/nette-date-time) \r [![License](https://poser.pugx.org/venca-x/nette-date-time/license.svg)](https://packagist.org/packages/venca-x/nette-date-time)",
   "main": "index.js",
   "directories": {
