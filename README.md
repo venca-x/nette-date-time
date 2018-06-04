@@ -166,39 +166,39 @@ presenter:
 <script type="text/javascript" src="{$basePath}/js/jquery-ui-timepicker-addon.js"></script>
 <script type="text/javascript" src="{$basePath}/js/netteDateTimePicker.js"></script>
 ```
-Bower
+
+npm
 -------------
 ```
-bower install jquery#1.*.* --save       //install last version 1.x
-bower install jquery-ui#1.*.* --save    //install last version 1.x
+npm install jquery@3.*.* --save-dev                 //install last version 3.x
+npm install jquery-ui-dist@1.*.* --save-dev         //install last version 1.x
+```
 
-```
-Then in bower.json:
-```
-"dependencies": {
-    "jquery": "~1.*.*",
-    "jquery-ui": "~1.11.2"
-}
-```
 Grunt
 -------------
 ```js
 concat: {
     js: {
-        src: ['bower_components/jquery/dist/jquery.min.js',
-                'bower_components/netteForms/index.js',
-                'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                'www/js/main.js',
-                './bower_components/jquery-ui/jquery-ui.min.js',
-                './vendor/venca-x/nette-date-time/client/js/jquery-ui-timepicker-addon.js',
-                './vendor/venca-x/nette-date-time/client/js/netteDateTimePicker.js'],
+        src: ['node_modules/jquery/dist/jquery.min.js',
+                'node_modules/popper.js/dist/umd/popper.min.js',
+                'node_modules/bootstrap/dist/js/bootstrap.min.js',
+                'node_modules/jquery-ui-dist/jquery-ui.min.js',
+                'vendor/nette/forms/src/assets/netteForms.min.js',
+                'vendor/venca-x/nette-date-time/client/js/jquery-ui-timepicker-addon.js',
+                'vendor/venca-x/nette-date-time/client/js/netteDateTimePicker.js',
+                'src/js/main.js'
+            ],
         dest: 'www/js/compiled.min.js'
     }
 },
 cssmin: {
     target: {
         files: {
-            'www/css/main.min.css': ['www/css/main.css', "bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css", "vendor/venca-x/nette-date-time/client/css/style.css" ]
+            'www/css/main.min.css': [
+                'node_modules/jquery-ui-dist/jquery-ui.min.css',
+                'vendor/venca-x/nette-date-time/client/css/style.css',
+                'www/css/main.css'
+            ]
         }
     }
 }
