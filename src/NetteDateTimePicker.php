@@ -35,7 +35,7 @@ class NetteDateTimePicker extends Controls\TextInput
 	}
 
 
-	public function __construct($label = null, string $type)
+	public function __construct($label, string $type)
 	{
 		if (!isset($this->supportFormatsArray[$type])) {
 			throw new \InvalidArgumentException("addDate: invalid date type '$type' given.");
@@ -44,6 +44,7 @@ class NetteDateTimePicker extends Controls\TextInput
 		parent::__construct($label);
 		$this->type = $type;
 		$this->control->addClass('nette-date-time');
+		$this->control->appendAttribute('autocomplete', 'off');
 		$this->control->data('dateinput-type', $type);
 	}
 
@@ -88,6 +89,11 @@ class NetteDateTimePicker extends Controls\TextInput
 	 */
 	public function getValue()
 	{
-		return $this->valueDateTime;
+		if ($this->value == null) {
+			//new value is null
+			return null;
+		} else {
+			return $this->valueDateTime;
+		}
 	}
 }
