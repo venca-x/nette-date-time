@@ -67,6 +67,29 @@ class GetHttpDataTest extends Tester\TestCase
 		Assert::same('10:25', $a['time']->format('H:i'));
 		Assert::same('12:42:41', $a['timesec']->format('H:i:s'));
 	}
+
+
+	public function testEmpty()
+	{
+		$form = new Form;
+
+		$form->addDate('datetime', 'Date time:', 'datetime');
+		$form->addDate('date', 'Date:', 'date');
+		$form->addDate('time', 'Time:', 'time');
+		$form->addDate('timesec', 'Time sec:', 'timesec');
+
+		$form->addSubmit('send', 'Send');
+
+		Assert::truthy($form->isSubmitted());
+		Assert::true($form->isSuccess());
+
+		$a = $form->getValues(true);
+
+		Assert::same(null, $a['datetime']);
+		Assert::same(null, $a['date']);
+		Assert::same(null, $a['time']);
+		Assert::same(null, $a['timesec']);
+	}
 }
 
 $test = new GetHttpDataTest();
