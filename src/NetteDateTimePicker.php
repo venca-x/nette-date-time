@@ -87,7 +87,7 @@ class NetteDateTimePicker extends Controls\TextInput
 	 * Value after submit form
 	 * @return DateTime
 	 */
-	public function getValue()
+	public function getValue(): mixed
 	{
 		if ($this->value == null) {
 			//new value is null
